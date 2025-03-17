@@ -1,0 +1,28 @@
+# exporting variables for zsh shell to use (dependent on system)
+
+# for windows desktop
+if [ -d "/mnt/c/Users/ianko" ]; then
+	export MYHOME="/mnt/c/Users/ianko"
+
+	if [ ! -d "$MYHOME/Documents/Programming" ]; then
+		mkdir $MYHOME/Documents/Programming
+	fi
+
+	export PROGRAMMING="$MYHOME/Documents/Programming"
+fi
+
+
+# for macbook
+if [ -d "/Users/iankong" ]; then
+	export MYHOME="Users/iankong"
+
+	if [ ! -d "$MYHOME/Documents/Programming" ]; then
+		mkdir $MYHOME/Documents/Programming
+	fi
+	
+	export PROGRAMMING="$MYHOME/Documents/Programming"
+
+fi
+
+
+export DOTFILES="$HOME/.dotfiles"

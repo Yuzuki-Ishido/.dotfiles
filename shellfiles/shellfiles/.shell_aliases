@@ -1,0 +1,13 @@
+# creating aliases to use in terminal, streamlined for personal preferences
+# meant to be sourced in .zshrc file
+
+# REPOSITORIES
+alias home="cd $MYHOME"
+alias prg="cd $PROGRAMMING"
+alias dotfiles="cd $DOTFILES"
+
+# TERMINAL COMMANDS
+alias lsal="ls -al"
+alias python="python3"
+alias vim="nvim"
+

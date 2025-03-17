@@ -27,3 +27,6 @@ if [ -e /home/yuzuki/.nix-profile/etc/profile.d/nix.sh ]; then . /home/yuzuki/.n
 # source shellfiles
 source ~/shellfiles/.shell_exports
 source ~/shellfiles/.shell_aliases
+
+# set up fzf key bindings and fuzzy completion
+eval "$(fzf --zsh)"

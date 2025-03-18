@@ -30,3 +30,6 @@ source ~/shellfiles/.shell_aliases
 
 # set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
+
+# bat theme
+export BAT_THEME=tokyonight_night

@@ -12,5 +12,5 @@ alias python="python3"
 alias vim="nvim"
 
 # FZF COMMANDS
-alias fsearch='fzf --preview="bat --colors=always {}"'
+alias fsearch='fzf --preview="bat --color=always {}"'
 alias fvim='nvim $(fzf --preview="bat --color=always {}")'

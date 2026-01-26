@@ -26,3 +26,12 @@ fi
 
 
 export DOTFILES="$HOME/.dotfiles"
+
+# for arch linux
+if [[ "$(uname)" == "Linux" ]]; then
+  export MYHOME="/home/yuzuki"
+  if [ ! -d "$MYHOME/Programming" ]; then
+    mkdir -p $MYHOME/Programming
+  fi
+  export PROGRAMMING="$MYHOME/Programming"
+fi

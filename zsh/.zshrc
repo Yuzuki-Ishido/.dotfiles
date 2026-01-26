@@ -5,24 +5,38 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# removing 'compdef: command not found' error from zsh auto-compleetion
+# removing 'compdef: command not found' error from zsh auto-completion
 autoload -Uz compinit
 compinit
 
-# Export nvm completion settings for lukechilds/zsh-nvm plugin
+
+# Export nvim completion settings for lukechilds/zsh-nvm plugin
 # Note: This must be exported before the plugin is bundled
-export NVM_DIR=${HOME}/.nvm
+export NVIM_DIR=${HOME}/.nvm
 export NVM_COMPLETION=true
 
-# source zsh plugins
-source ~/.zsh_plugins.sh
+# setting up japanese language support
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS="@im=fcitx"
 
-# use nix
-if [ -e /home/yuzuki/.nix-profile/etc/profile.d/nix.sh ]; then . /home/yuzuki/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# source antidote
+source ~/.antidote/antidote.zsh
 
+# Set the root name of plugins file (.txt and .zsh) antidote will use.
+zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+  (
+    source ~/.antidote/antidote.zsh
+    antidote bundle <${zsh_plugins}.txt >${zsh_plugins}.zsh
+  )
+fi 
+
+source ${zsh_plugins}.zsh
+
+# tmux auto titling removal
+export DISABLE_AUTO_TITLE=true
 
 # source shellfiles
 source ~/shellfiles/.shell_exports
@@ -31,5 +45,8 @@ source ~/shellfiles/.shell_aliases
 # set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
 
-# bat theme
-export BAT_THEME=tokyonight_night
+# start Starship Prompt
+eval "$(starship init zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

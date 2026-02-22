@@ -15,7 +15,7 @@ if [ -f "$PAUSE_FILE" ]; then
 	rm -f "$PAUSE_FILE"
 fi
 
-sleep 2
+sleep 1
 
 # Ensure mapping file exists
 if [ ! -f "$WALLPAPER_MAP" ]; then
@@ -23,6 +23,8 @@ if [ ! -f "$WALLPAPER_MAP" ]; then
 	exit 1
 fi
 
+
+echo "[wallpaper-rotate] Script started at $(date)" > tmp/wallpaper-log
 while true; do
 	# Check if rotation is paused
 	if [ -f "$PAUSE_FILE" ]; then

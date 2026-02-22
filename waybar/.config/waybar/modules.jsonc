@@ -1,0 +1,64 @@
+{
+  // Launcher
+  "custom/launcher": {
+    "format": "󰣇",
+    "on-click": "$HOME/.config/waybar/scripts/launcher.sh",
+    "tooltip": "Launcher",
+    "interval": 0
+  },
+  
+  // Workspaces (Hyprland)
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "format": "",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    },
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "HDMI-A-1": [6, 7, 8, 9, 10],
+      "HDMI-A-2": [1, 2, 3, 4, 5]
+    }
+  },
+
+  /*
+  // custom/keyboard
+  "custom/keyboard": {
+
+  }
+  */
+
+  // Network
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "  {essid} ({signal_strength}%)",
+    "format-ethernet": "󰈁 {ifname}",
+    "format-disconnected": "󰖪 Disconnected",
+    "max-length": 50,
+    "on-click": "nm-connection-editor"
+  },
+
+  // Pulseaudio
+  "pulseaudio": {
+    "scroll-step": 1,
+    "format": "{icon} {volume: >3}%",
+    "format-bluetooth": "{icon} {volume: >3}%",
+    "format-muted": "󰝟 muted",
+    "format-icons": {
+      "Jeecoo": "",
+      "Jeecoo": "",
+      "default":  ["", ""]
+    },
+    "on-click": "pavucontrol",
+    "on-click-right": "~/.config/waybar/scripts/toggle-audio.sh",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+  },
+  "clock": {
+    "format": "{:%a %m/%d %I:%M %p}",
+    "tooltip-format": "{:%A, %d %B %Y %H:%M:%S}",
+    "interval": 1
+  }
+}

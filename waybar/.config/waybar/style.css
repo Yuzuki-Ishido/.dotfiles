@@ -1,0 +1,107 @@
+@import "mocha.css";
+
+* {
+  font-family: "CaskaydiaCove Nerd Font";
+  font-size: 16px;
+  min-height: 0;
+  font-weight: bold;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid @base;
+}
+
+/* -----------------------------------
+ * custom/launcher
+ * -----------------------------------*/
+#custom-launcher {
+  background: @surface0;
+  color: @sky;
+  font-weight: bold;
+  margin: 4px 2px 4px 4px;
+  padding: 8px 14px 8px 10px;
+  border-radius: 12px;
+  border: 2px solid @sky;
+}
+
+/* -----------------------------------
+ * Workspaces
+ * -----------------------------------*/
+
+#workspaces {
+  background-color: @surface0;
+  padding: 4px;
+  margin: 4px;
+  border-radius: 12px;
+  border: 2px solid @lavender;
+  border-right: 6px solid @lavender;
+}
+
+#workspaces button {
+  background-color: @surface2;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+
+  min-height: 8px;
+  min-width: 30px;
+  margin: 10px 4px; /* determines button height */
+
+  transition:
+    background-color 0.2s ease,
+    min-width 0.2s ease;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+  background-color: @lavender;
+  min-width: 90px;
+}
+
+#workspaces button label {
+  font-size: 0;
+}
+
+/* -----------------------------------
+ * Network
+ * -----------------------------------*/
+
+#network {
+  background: @surface0;
+  color: @teal;
+  /* border-left: 4px solid @green; */
+  margin: 4px 2px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 2px solid @teal;
+  border-right: 6px solid @teal;
+}
+
+/* -----------------------------------
+ * Pulseaudio
+ * -----------------------------------*/
+#pulseaudio {
+  background: @surface0;
+  color: @sapphire;
+  border-radius: 12px;
+  margin: 4px 2px 4px 0;
+  padding: 8px 12px;
+  border: 2px solid @sapphire;
+  border-right: 6px solid @sapphire;
+}
+
+/* -----------------------------------
+ * Clock
+ * -----------------------------------*/
+
+#clock {
+  background: @surface0;
+  color: @blue;
+  font-weight: bold;
+  margin: 4px 4px 4px 2px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 2px solid @blue;
+  border-right: 6px solid @blue;
+}

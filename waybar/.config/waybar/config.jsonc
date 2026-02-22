@@ -1,0 +1,16 @@
+{
+  "position": "top",
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    //"custom/keyboard",
+    "network",
+    "pulseaudio",
+    "clock"
+  ],
+
+  "include": "~/.config/waybar/modules.jsonc"
+
+}

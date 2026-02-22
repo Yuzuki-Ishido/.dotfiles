@@ -1,0 +1,4 @@
+⏻|systemctl poweroff
+|systemctl reboot
+󰤄|systemctl suspend
+

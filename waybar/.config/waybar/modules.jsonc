@@ -23,18 +23,29 @@
     }
   },
 
-  /*
   // custom/keyboard
   "custom/keyboard": {
+    "exec": "~/.config/waybar/scripts/keyboard-status.sh",
+    "interval": 0.5,
+    "return-type": "json",
+    "on-click": "~/.config/waybar/scripts/toggle-language.sh"
 
-  }
-  */
+  },
+
+  // tray
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10,
+    "show-passive-items": true,
+    "reverse-direction": false,
+    "smooth-scrolling-threshold": 1.0
+  },
 
   // Network
   "network": {
     "format": "{ifname}",
     "format-wifi": "  {essid} ({signal_strength}%)",
-    "format-ethernet": "󰈁 {ifname}",
+    "format-ethernet": "󰈁 Ethernet",
     "format-disconnected": "󰖪 Disconnected",
     "max-length": 50,
     "on-click": "nm-connection-editor"

@@ -5,7 +5,8 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    //"custom/keyboard",
+    "custom/keyboard",
+    "tray",
     "network",
     "pulseaudio",
     "clock"

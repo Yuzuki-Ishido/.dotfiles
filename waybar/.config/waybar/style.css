@@ -9,7 +9,6 @@
 
 window#waybar {
   background: rgba(0, 0, 0, 0);
-  border: 2px solid @base;
 }
 
 /* -----------------------------------
@@ -64,18 +63,54 @@ window#waybar {
 }
 
 /* -----------------------------------
+ * custom/keyboard
+ * -----------------------------------*/
+
+#custom-keyboard {
+  background: @surface0;
+  margin: 4px 2px;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+#custom-keyboard.caps-off {
+  color: @green;
+  border: 2px solid @green;
+  border-right: 6px solid @green;
+}
+
+#custom-keyboard.caps-on {
+  color: @red;
+  border: 2px solid @red;
+  border-right: 6px solid @red;
+}
+
+
+/* -----------------------------------
+ * tray
+ * -----------------------------------*/
+
+#tray {
+  background: @surface0;
+  color: @teal;
+  border-radius: 12px;
+  margin: 4px 2px 4px 0;
+  padding: 8px 12px;
+  border: 2px solid @teal;
+  border-right: 6px solid @teal;
+}
+/* -----------------------------------
  * Network
  * -----------------------------------*/
 
 #network {
   background: @surface0;
-  color: @teal;
-  /* border-left: 4px solid @green; */
+  color: @sky;
   margin: 4px 2px;
   padding: 8px 12px;
   border-radius: 12px;
-  border: 2px solid @teal;
-  border-right: 6px solid @teal;
+  border: 2px solid @sky;
+  border-right: 6px solid @sky;
 }
 
 /* -----------------------------------
@@ -90,6 +125,7 @@ window#waybar {
   border: 2px solid @sapphire;
   border-right: 6px solid @sapphire;
 }
+
 
 /* -----------------------------------
  * Clock
